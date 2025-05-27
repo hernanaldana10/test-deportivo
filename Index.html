@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deportes Interactivos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    overflow-x: hidden;
+  }
+  header {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  header h1 {
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease forwards;
+  }
+  header p {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: #d1dff0;
+    animation: fadeIn 2s ease forwards;
+  }
+
+  /* Animaciones */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @keyframes floatUpDown {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+  }
+
+  main {
+    max-width: 960px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+  }
+  .sports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 2rem;
+  }
+  .sport-card {
+    background: rgba(255 255 255 / 0.15);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 8px 14px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .sport-card:hover {
+    transform: translateY(-15px) rotate(3deg);
+    box-shadow: 0 16px 24px rgba(0,0,0,0.6);
+    background: rgba(255 255 255 / 0.3);
+  }
+  .sport-icon {
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+    animation: floatUpDown 4s ease-in-out infinite;
+    color: #ffd93b;
+  }
+  .sport-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+  }
+  .sport-description {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #c1c9d9;
+    min-height: 45px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #a9b4cd;
+  }
+
+  /* Parallax background layers */
+  .parallax {
+    position: relative;
+    perspective: 1000px;
+  }
+  .parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    will-change: transform;
+  }
+  .parallax-layer.layer1 {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2933/2933119.png");
+    background-size: 120px auto;
+    bottom: 10px;
+    opacity: 0.15;
+  }
+  .parallax-layer.layer2 {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3211/3211270.png");
+    background-size: 140px auto;
+    bottom: 40px;
+    opacity: 0.20;
+  }
+  .parallax-layer.layer3 {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/660/660201.png");
+    background-size: 100px auto;
+    bottom: 20px;
+    opacity: 0.18;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Deportes en Movimiento</h1>
+  <p>Explora la energía y pasión de los deportes con movimiento interactivo</p>
+</header>
+
+<main>
+  <section class="sports-grid">
+    <article class="sport-card" tabindex="0" aria-label="Fútbol">
+      <div class="sport-icon">⚽</div>
+      <h2 class="sport-name">Fútbol</h2>
+      <p class="sport-description">El deporte rey, el juego que une pasiones en todo el mundo.</p>
+    </article>
+    <article class="sport-card" tabindex="0" aria-label="Baloncesto">
+      <div class="sport-icon">🏀</div>
+      <h2 class="sport-name">Baloncesto</h2>
+      <p class="sport-description">Velocidad y precisión en cada canasta lanzada.</p>
+    </article>
+    <article class="sport-card" tabindex="0" aria-label="Tenis">
+      <div class="sport-icon">🎾</div>
+      <h2 class="sport-name">Tenis</h2>
+      <p class="sport-description">Un duelo de estrategia y resistencia en la pista.</p>
+    </article>
+    <article class="sport-card" tabindex="0" aria-label="Natación">
+      <div class="sport-icon">🏊‍♂️</div>
+      <h2 class="sport-name">Natación</h2>
+      <p class="sport-description">Movimiento fluido que desafía la gravedad en el agua.</p>
+    </article>
+    <article class="sport-card" tabindex="0" aria-label="Ciclismo">
+      <div class="sport-icon">🚴‍♀️</div>
+      <h2 class="sport-name">Ciclismo</h2>
+      <p class="sport-description">Velocidad y resistencia sobre dos ruedas en caminos y pistas.</p>
+    </article>
+    <article class="sport-card" tabindex="0" aria-label="Atletismo">
+      <div class="sport-icon">🏃‍♂️</div>
+      <h2 class="sport-name">Atletismo</h2>
+      <p class="sport-description">La esencia del deporte: correr, saltar y lanzar con fuerza.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Deportes Interactivos - Creado con pasión y tecnología moderna.
+</footer>
+
+<script>
+  // Parallax effect on mouse move
+  const parallaxLayers = [];
+
+  function createParallaxLayer(className) {
+    const div = document.createElement('div');
+    div.className = `parallax-layer ${className}`;
+    document.body.appendChild(div);
+    parallaxLayers.push(div);
+  }
+  createParallaxLayer('layer1');
+  createParallaxLayer('layer2');
+  createParallaxLayer('layer3');
+
+  document.body.classList.add('parallax');
+
+  document.addEventListener('mousemove', e => {
+    const x = (e.clientX / window.innerWidth) - 0.5;
+    const y = (e.clientY / window.innerHeight) - 0.5;
+
+    parallaxLayers.forEach((layer, index) => {
+      const movement = (index + 1) * 10;
+      const translateX = x * movement;
+      const translateY = y * movement;
+      layer.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
+    });
+  });
+</script>
+</body>
+</html>
